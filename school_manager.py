@@ -15,10 +15,10 @@ class SchoolManager:
     def assign_subject_to_student(self, student_id, subject_id):
         if student_id in self.students and subject_id in self.subjects:
             student = self.students[student_id]
-            subject = self.subjects[subject_id]=====
+            subject = self.subjects[subject_id]
             student.add_subject(subject)
         else:
-            print("Invalid student of subject ID")================
+            print("Invalid student of subject ID")
 
     def show_student(self):
         for student in self.students.values():
