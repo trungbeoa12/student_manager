@@ -43,4 +43,38 @@ class SchoolManager:
             print(f"Dữ liệu đã được tải từ file {filename}.")
         except FileNotFoundError:
             print(f"File {filename} không tồn tại. Bắt đầu với dữ liệu trống.")
+            
+            
+    def show_students_with_subjects(self):
+        if not self.students:
+            print("Chưa có học sinh nào trong danh sách.")
+            return
+        for student in self.students:
+            subject_names = [sub.name for sub in self.subjects if sub.subject_id in student.subjects]
+            print(f"ID: {student.student_id}, Name: {student.name}, Subjects: {', '.join(subject_names) if subject_names else 'Chưa đăng ký môn học nào'}")
+            
+    def show_student_subject_count(self):
+        if not self.students:
+            print("Chưa có học sinh nào trong danh sách.")
+            return
+        print("\nSố lượng môn học của mỗi học sinh:")
+        for student in self.students:
+            print(f"ID: {student.student_id}, Name: {student.name}, Số môn học: {len(student.subjects)}")
+            
+    def show_students_by_subject(self, subject_id):
+        subject = next((s for s in self.subjects if s.subject_id == subject_id), None)
+        if not subject:
+            print(f"Môn học với ID {subject_id} không tồn tại.")
+            return
+
+        print(f"\nDanh sách học sinh học môn {subject.name}:")
+        students_in_subject = [student for student in self.students if subject_id in student.subjects]
+        if not students_in_subject:
+            print("Không có học sinh nào học môn này.")
+        else:
+            for student in students_in_subject:
+                print(f"ID: {student.student_id}, Name: {student.name}")
+
+
+
 

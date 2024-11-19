@@ -14,6 +14,18 @@
             "subjects": [
                 101
             ]
+        },
+        {
+            "student_id": 4,
+            "name": "\u0110\u1ed7 Ph\u00fac L\u00e2m",
+            "subjects": [
+                4
+            ]
+        },
+        {
+            "student_id": 5,
+            "name": "\u0110\u1ed7 Th\u00e0nh Long",
+            "subjects": []
         }
     ],
     "subjects": [
@@ -24,6 +36,10 @@
         {
             "subject_id": 102,
             "name": "Van"
+        },
+        {
+            "subject_id": 4,
+            "name": "V\u1eadt l\u00fd"
         }
     ]
 }
